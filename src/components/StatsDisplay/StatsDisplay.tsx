@@ -8,9 +8,10 @@ export interface StatsDisplayProps {
   stats: TextStats;
   showReadingTime?: boolean;
   wordCountColor: string
+  readingTime: string
 }
 
-function StatsDisplay({stats, showReadingTime, wordCountColor}: StatsDisplayProps) {
+function StatsDisplay({stats, showReadingTime, wordCountColor, readingTime}: StatsDisplayProps) {
   return <section>
     <div className="flex justify-center p-[5px]">
       <div className="mx-[50px]">
@@ -25,7 +26,7 @@ function StatsDisplay({stats, showReadingTime, wordCountColor}: StatsDisplayProp
       <div style={{display : showReadingTime ? 'block' : 'none'}} className="mx-[50px]">
         <p>Reading Time</p>
         <p className="text-[12px]">(Assuming 200 WPM)</p>
-        <p>{stats.readingTime}</p>
+        <p>{readingTime}</p>
       </div>
     </div>
   </section>
